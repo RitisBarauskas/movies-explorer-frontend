@@ -1,15 +1,16 @@
 .promo {
     margin: 0 auto;
     width: 100%;
-    max-width: 1280px;
     max-height: 574px;
     background-color: #F3C1F8;
     padding-bottom: 75px;
 }
 
 .promo__container {
-    margin: 0;
+    border: 1px crimson solid;
+    margin: 0 auto;
     padding: 0;
+    max-width: 1280px;
     background-image: url("../../images/promo_logo.svg");
     background-repeat: no-repeat;
     background-position: 900px 75px;
@@ -57,11 +58,4 @@
     border-radius: 3px;
     box-sizing: border-box;
     cursor: pointer;
-}
-
-.promo__image {
-    grid-area: image;
-    margin: 75px 70px 0 0;
-    width: 310px;
-    height: 304px;
 }

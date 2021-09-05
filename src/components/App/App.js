@@ -9,12 +9,13 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 import Header from "../Header/Header";
 import Promo from "../Promo/Promo";
+import Techs from "../Techs/Techs";
 
 function App() {
     return (
         <div className="app">
             <Header />
-            <Promo />
+
             <Switch>
                 <Route path="/movies">
                     <Movies />
@@ -32,7 +33,9 @@ function App() {
                     <Register />
                 </Route>
                 <Route path="/">
+                    <Promo />
                     <AboutProject />
+                    <Techs />
                 </Route>
             </Switch>
             <Footer />

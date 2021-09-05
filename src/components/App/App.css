@@ -1,9 +1,9 @@
 .app {
-    margin: 0;
-    background-color: coral;
+    margin: 0 auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     min-width: 320px;
     height: min-content;
+    align-items: center;
 }
