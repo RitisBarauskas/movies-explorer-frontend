@@ -8,11 +8,13 @@ import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 import "./App.css";
 import Header from "../Header/Header";
+import Promo from "../Promo/Promo";
 
 function App() {
     return (
         <div className="app">
             <Header />
+            <Promo />
             <Switch>
                 <Route path="/movies">
                     <Movies />
