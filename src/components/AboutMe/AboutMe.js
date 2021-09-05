@@ -10,7 +10,7 @@ const AboutMe= () => {
                     Студент
                 </h2>
                 <picture className="about-me__photo-wrapper">
-                    <img src={photoMePath} className="about-me__photo" />
+                    <img src={photoMePath} className="about-me__photo" alt="Фото Ритиса Бараускаса"/>
                 </picture>
                 <p className="about-me__name">
                     Ритис Бараускас
@@ -26,12 +26,12 @@ const AboutMe= () => {
                 </p>
                 <ul className="about-me__links">
                     <li className="about-me__li">
-                        <a className="about-me__link" href="https://www.facebook.com/barauskasritis" target="_blank">
+                        <a className="about-me__link" href="https://www.facebook.com/barauskasritis" target="_blank" rel="noreferrer">
                             Facebook
                         </a>
                     </li>
                     <li className="about-me__li">
-                        <a className="about-me__link" href="https://github.com/RitisBarauskas" target="_blank">
+                        <a className="about-me__link" href="https://github.com/RitisBarauskas" target="_blank" rel="noreferrer">
                             Github
                         </a>
                     </li>
