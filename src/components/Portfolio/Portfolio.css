@@ -52,4 +52,34 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 1024px) {
+    .portfolio__title {
+        margin: 0 0 0 50px;
+    }
+
+    .portfolio__links {
+        margin: 50px 50px 0;
+    }
+
+    .portfolio__link {;
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio__title {
+        margin: 0 0 0 14px;
+        font-size: 14px;
+    }
+
+    .portfolio__links {
+        margin: 40px 14px 0;
+    }
+
+    .portfolio__link {;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
 

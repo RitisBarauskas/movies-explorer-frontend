@@ -7,9 +7,6 @@ function Footer() {
                 <div className="footer__info">
                     Учебный проект Яндекс.Практикум х BeatFilm.
                 </div>
-                <p className="footer__copyright">
-                    &copy; {new Date().getFullYear()} BestMovies.fun
-                </p>
                 <nav className="footer__links">
                     <a className="footer__link" href="https://praktikum.yandex.ru/https://github.com/RitisBarauskas" target="_blank">
                         Яндекс.Практикум
@@ -21,6 +18,9 @@ function Footer() {
                         Github
                     </a>
                 </nav>
+                <p className="footer__copyright">
+                    &copy; {new Date().getFullYear()} BestMovies.fun
+                </p>
             </div>
         </footer>
     )

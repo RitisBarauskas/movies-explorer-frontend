@@ -9,6 +9,9 @@ const AboutMe= () => {
                 <h2 className="about-me__title">
                     Студент
                 </h2>
+                <picture className="about-me__photo-wrapper">
+                    <img src={photoMePath} className="about-me__photo" />
+                </picture>
                 <p className="about-me__name">
                     Ритис Бараускас
                 </p>
@@ -33,9 +36,6 @@ const AboutMe= () => {
                         </a>
                     </li>
                 </ul>
-                <picture className="about-me__photo-wrapper">
-                    <img src={photoMePath} className="about-me__photo" />
-                </picture>
             </div>
             <Portfolio />
         </div>
