@@ -36,6 +36,7 @@ function App() {
                     <Promo />
                     <AboutProject />
                     <Techs />
+                    <AboutMe />
                 </Route>
             </Switch>
             <Footer />
