@@ -8,17 +8,17 @@ function Portfolio() {
             </p>
             <ul className="portfolio__links">
                 <li className="portfolio__item">
-                    <a className="portfolio__link" href="https://ritisbarauskas.github.io/how-to-learn/">
+                    <a className="portfolio__link" href="https://ritisbarauskas.github.io/how-to-learn/" target="_blank">
                         Статичный сайт
                     </a>
                 </li>
                 <li className="portfolio__item">
-                    <a className="portfolio__link" href="https://ritisbarauskas.github.io/russian-travel/">
+                    <a className="portfolio__link" href="https://ritisbarauskas.github.io/russian-travel/" target="_blank">
                         Адаптивный сайт
                     </a>
                 </li>
                 <li className="portfolio__item">
-                    <a className="portfolio__link" href="https://mesto.website/">
+                    <a className="portfolio__link" href="https://mesto.website/" target="_blank">
                         Одностраничное приложение
                     </a>
                 </li>

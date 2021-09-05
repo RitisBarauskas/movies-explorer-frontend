@@ -1,4 +1,5 @@
 import "./Promo.css";
+import {NavLink} from "react-router-dom";
 
 
 function Promo() {
@@ -11,9 +12,9 @@ function Promo() {
                 <p className="promo__subtitle">
                     Листайте ниже, чтобы узнать больше про этот проект и его создателя.
                 </p>
-                <button className="promo__link">
+                <NavLink className="promo__link" to="/about-project">
                     Узнать больше
-                </button>
+                </NavLink>
             </div>
         </div>
     )

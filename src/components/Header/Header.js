@@ -6,7 +6,9 @@ function Header() {
     return (
         <header className="header">
             <div className="header__container">
-                <img className="header__logo" src={logoPath} alt="Логотип"/>
+                <NavLink className="header__link-logo" to="/">
+                    <img className="header__logo" src={logoPath} alt="Логотип"/>
+                </NavLink>
                 <nav>
                     <ul className="header__nav">
                         <li className="header__li">

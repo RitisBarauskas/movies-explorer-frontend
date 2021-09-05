@@ -5,7 +5,6 @@
 }
 
 .footer__container {
-    border: 1px crimson solid;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 70px;
@@ -65,6 +64,10 @@
     line-height: 16px;
     color: #000;
     text-decoration: none;
+}
+
+.footer__link:hover {
+    opacity: .6;
 }
 
 .footer__link:last-child {

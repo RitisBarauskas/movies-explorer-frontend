@@ -6,7 +6,6 @@
 }
 
 .about-me__container {
-    border: 1px crimson solid;
     max-width: 1280px;
     margin: 110px auto 0;
     padding: 0 0 100px 0;
@@ -94,6 +93,10 @@
     line-height: 17px;
     color: #000;
     text-decoration: none;
+}
+
+.about-me__link:hover {
+    opacity: .6;
 }
 
 .about-me__photo-wrapper {

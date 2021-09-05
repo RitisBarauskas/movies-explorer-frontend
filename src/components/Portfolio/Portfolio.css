@@ -1,6 +1,5 @@
 .portfolio {
     max-width: 1280px;
-    border: 1px crimson solid;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -28,9 +27,6 @@
     margin: 0 0 20px 0;
     border-bottom: 1px solid #e8e8e8;
     padding: 0 0 19px 0;
-    background-image: url("../../images/portfolio_arrow.svg");
-    background-repeat: no-repeat;
-    background-position: right center;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -50,6 +46,23 @@
     line-height: 50px;
     color: #000;
     text-decoration: none;
+    background-image: url("../../images/portfolio_arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.portfolio__link:hover {
+    animation: showShadow .5s linear forwards;
+}
+
+@keyframes showShadow {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        background-color: #F3C1F8;
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
