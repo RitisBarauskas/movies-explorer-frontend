@@ -62,3 +62,33 @@
     height: 32px;
     border-radius: 3px;
 }
+
+@media screen and (max-width: 768px) {
+    .header__logo {
+        margin-left: 30px;
+    }
+
+    .header__nav {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo {
+        margin-left: 14px;
+    }
+
+    .header__nav {
+        margin-right: 14px;
+    }
+
+    .header__li_login {
+        width: 54px;
+        height: 26px;
+    }
+
+    .header__link {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
