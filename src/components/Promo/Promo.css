@@ -10,15 +10,9 @@
 .promo__container {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    grid-template-areas: "info image";
-}
-
-.promo__info {
-    margin: 0;
-    padding: 0;
-    grid-area: info;
+    background-image: url("../../images/promo_logo.svg");
+    background-repeat: no-repeat;
+    background-position: 900px 75px;
     display: flex;
     flex-direction: column;
 }
