@@ -1,0 +1,8 @@
+.app {
+    margin: 0;
+    background-color: coral;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+}

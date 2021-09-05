@@ -5,10 +5,14 @@ import AboutMe from "../AboutMe/AboutMe";
 import AboutProject from "../AboutProject/AboutProject";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
+import Footer from "../Footer/Footer";
+import "./App.css";
+import Header from "../Header/Header";
 
 function App() {
     return (
-        <div>
+        <div className="app">
+            <Header />
             <Switch>
                 <Route path="/movies">
                     <Movies />
@@ -29,6 +33,7 @@ function App() {
                     <AboutProject />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     );
 }
