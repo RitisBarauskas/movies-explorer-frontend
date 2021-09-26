@@ -1,6 +1,11 @@
+import "./Movies.css";
+import SearchForm from "../SearchForm/SearchForm";
+
 const Movies = () => {
     return (
-        <div>Фильмы</div>
+        <div className="movies">
+            <SearchForm />
+        </div>
     )
 };
 
