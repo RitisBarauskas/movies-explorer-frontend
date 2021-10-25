@@ -1,13 +1,19 @@
 import "./Movies.css";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Movies = () => {
     return (
-        <div className="movies">
-            <SearchForm />
-            <MoviesCardList />
-        </div>
+        <>
+            <Header />
+            <div className="movies">
+                <SearchForm />
+                <MoviesCardList />
+            </div>
+            <Footer />
+        </>
     )
 };
 

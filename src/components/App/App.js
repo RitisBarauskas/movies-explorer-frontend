@@ -15,8 +15,6 @@ import Profile from "../Profile/Profile";
 function App() {
     return (
         <div className="app">
-            <Header />
-
             <Switch>
                 <Route path="/movies">
                     <Movies />
@@ -34,13 +32,14 @@ function App() {
                     <Register />
                 </Route>
                 <Route path="/">
+                    <Header />
                     <Promo />
                     <AboutProject />
                     <Techs />
                     <AboutMe />
+                    <Footer />
                 </Route>
             </Switch>
-            <Footer />
         </div>
     );
 }
