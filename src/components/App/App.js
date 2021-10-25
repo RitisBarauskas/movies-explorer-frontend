@@ -10,6 +10,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Promo from "../Promo/Promo";
 import Techs from "../Techs/Techs";
+import Profile from "../Profile/Profile";
 
 function App() {
     return (
@@ -20,11 +21,11 @@ function App() {
                 <Route path="/movies">
                     <Movies />
                 </Route>
-                <Route path="/save-movies">
+                <Route path="/saved-movies">
                     <SavedMovies />
                 </Route>
                 <Route path="/profile">
-                    <AboutMe />
+                    <Profile />
                 </Route>
                 <Route path="/signin">
                     <Login />
