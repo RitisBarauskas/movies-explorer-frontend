@@ -20,6 +20,7 @@ const Register = () => {
                         type="text"
                         placeholder="Имя"
                         required
+                        autoComplete="off"
                     />
                 </label>
                 <label className="register__label">
@@ -30,6 +31,7 @@ const Register = () => {
                         type="email"
                         placeholder="E-mail"
                         required
+                        autoComplete="off"
                     />
                 </label>
                 <label className="register__label">
@@ -41,6 +43,7 @@ const Register = () => {
                         placeholder="Пароль"
                         required
                         minLength="8"
+                        autoComplete="off"
                     />
                 </label>
                 <button className="register__button" type="submit">
@@ -48,7 +51,7 @@ const Register = () => {
                 </button>
                 <p className="register__text">
                     Уже зарегистрированы?
-                    <Link to="signin" className="register__link">
+                    <Link to="/signin" className="register__link">
                         Войти
                     </Link>
                 </p>
