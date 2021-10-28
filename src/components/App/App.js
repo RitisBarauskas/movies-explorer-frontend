@@ -11,6 +11,7 @@ import Header from "../Header/Header";
 import Promo from "../Promo/Promo";
 import Techs from "../Techs/Techs";
 import Profile from "../Profile/Profile";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
     return (
@@ -30,6 +31,9 @@ function App() {
                 </Route>
                 <Route path="/signup">
                     <Register />
+                </Route>
+                <Route path="/404">
+                    <PageNotFound />
                 </Route>
                 <Route path="/">
                     <Header />
