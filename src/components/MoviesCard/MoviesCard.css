@@ -70,3 +70,50 @@
     cursor: pointer;
     object-fit: contain;
 }
+
+@media screen and (max-width: 480px) {
+    .movies-card__image {
+        max-width: 300px;
+        max-height: 168px;
+    }
+
+    .movies-card {
+        margin: 0 auto;
+        max-width: 300px;
+        max-height: 232px;
+        display: grid;
+        grid-template-columns: 1fr 30px;
+        grid-template-rows: 168px 1fr 27px;
+    }
+
+    .movies-card__like {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        margin: 16px 16px 0 0;
+    }
+
+    .movies-card__time {
+        margin: 8px 0 0 12px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .movies-card__title {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin: 14px 0 0 12px;
+    }
+
+    .movies-card__image {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+}
