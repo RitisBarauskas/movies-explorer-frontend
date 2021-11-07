@@ -8,7 +8,7 @@ function Footer() {
                     Учебный проект Яндекс.Практикум х BeatFilm.
                 </div>
                 <nav className="footer__links">
-                    <a className="footer__link" href="https://praktikum.yandex.ru/https://github.com/RitisBarauskas" target="_blank" rel="noreferrer">
+                    <a className="footer__link" href="https://praktikum.yandex.ru/" target="_blank" rel="noreferrer">
                         Яндекс.Практикум
                     </a>
                     <a className="footer__link" href="https://www.facebook.com/barauskasritis" target="_blank" rel="noreferrer">

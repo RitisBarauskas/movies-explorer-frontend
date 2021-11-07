@@ -12,9 +12,9 @@ function Promo() {
                 <p className="promo__subtitle">
                     Листайте ниже, чтобы узнать больше про этот проект и его создателя.
                 </p>
-                <NavLink className="promo__link" to="/about-project">
+                <a className="promo__link" href="#about-project">
                     Узнать больше
-                </NavLink>
+                </a>
             </div>
         </div>
     )
