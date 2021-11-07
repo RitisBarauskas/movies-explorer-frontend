@@ -22,6 +22,7 @@
     background-color: #fdfdfd;
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
     display: flex;
+    justify-content: space-between;
 }
 
 .search-form__image {
@@ -61,12 +62,14 @@
     border-radius: 48px;
     border: 0;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .search-form__find {
     margin: 0;
     padding: 0;
     display: flex;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {
