@@ -69,6 +69,16 @@
     height: 12px;
     cursor: pointer;
     object-fit: contain;
+    background: url("../../images/like.svg");
+    border: 0;
+}
+
+.movies-card__like_active {
+    background: url("../../images/like_active.svg");
+}
+
+.movies-card__like_delete {
+    background: url("../../images/close_like.svg");
 }
 
 @media screen and (max-width: 480px) {

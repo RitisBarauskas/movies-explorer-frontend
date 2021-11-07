@@ -48,6 +48,10 @@
     color: #a0a0a0;
 }
 
+.search-form__input:focus {
+    outline: #f3c1f8 solid 1px;
+}
+
 .search-form__submit {
     margin: 19px 19px 19px 21px;
     width: 59px;
@@ -63,6 +67,10 @@
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.search-form__submit:hover {
+    box-shadow: 0 3px 14px rgba(243, 193, 248, 1);
 }
 
 .search-form__find {
@@ -83,5 +91,19 @@
 
     .search-form {
         max-height: 272px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-form__image {
+        display: none;
+    }
+
+    .search-form__container {
+        margin: 0 10px 10px;
+    }
+
+    .search-form__input {
+        font-size: 14px;
     }
 }
