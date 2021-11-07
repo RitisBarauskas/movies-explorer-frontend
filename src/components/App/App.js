@@ -14,6 +14,7 @@ import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
+    const isIndex = true;
     return (
         <div className="app">
             <Switch>
@@ -36,7 +37,9 @@ function App() {
                     <PageNotFound />
                 </Route>
                 <Route path="/">
-                    <Header />
+                    <Header
+                        isIndex={isIndex}
+                    />
                     <Promo />
                     <AboutProject />
                     <Techs />

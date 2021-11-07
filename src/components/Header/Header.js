@@ -5,10 +5,10 @@ import Navigation from "../Navigation/Navigation";
 import {useState} from "react";
 
 
-function Header() {
+function Header({isIndex}) {
     const [isLogin, setIsLogin] = useState(true);
 
-    const headerClass = `header ${isLogin ? 'header_auth' : ''}`;
+    const headerClass = `header ${!isIndex ? 'header_no-index' : ''}`;
 
     let navigation;
 
