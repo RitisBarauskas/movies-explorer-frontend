@@ -1,0 +1,6 @@
+@import url('./vendors/normalize.css');
+@import url('./vendors/fonts/Inter/inter.css');
+
+body {
+  margin: 0;
+}
