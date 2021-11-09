@@ -1,5 +1,10 @@
 .movies-card {
     margin: 0;
+    padding: 0 0 40px;
+    list-style: none;
+}
+
+.movies-card__container {
     max-height: 134px;
     width: 100%;
     background-color: #f9f9f9;
@@ -10,14 +15,15 @@
 
 .movies-card__image {
     margin: 6px 6px 6px 0;
-    max-height: 122px;
+    height: 122px;
     max-width: 220px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
+
 }
 
 .movies-card__image:hover {
@@ -87,7 +93,7 @@
         max-height: 168px;
     }
 
-    .movies-card {
+    .movies-card__container {
         margin: 0 auto;
         max-width: 300px;
         max-height: 232px;

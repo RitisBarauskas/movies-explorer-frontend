@@ -4,13 +4,15 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const Movies = () => {
+const Movies = ({cards}) => {
     return (
         <>
             <Header />
             <div className="movies">
                 <SearchForm />
-                <MoviesCardList />
+                <MoviesCardList
+                    cards={cards}
+                />
             </div>
             <Footer />
         </>

@@ -12,17 +12,34 @@ import Promo from "../Promo/Promo";
 import Techs from "../Techs/Techs";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import apiMovies from "../../utils/MoviesApi";
+import {useEffect, useState} from "react";
 
 function App() {
+    const [cards, setCards] = useState([])
+
     const isIndex = true;
+
+    useEffect(() => {
+        apiMovies.getDataCards().then((cards) => {
+            setCards(cards);
+            console.log(cards);
+
+        }).catch((err) => console.log(err));
+    }, []);
+    console.log(cards)
     return (
         <div className="app">
             <Switch>
                 <Route path="/movies">
-                    <Movies />
+                    <Movies
+                        cards={cards}
+                    />
                 </Route>
                 <Route path="/saved-movies">
-                    <SavedMovies />
+                    <SavedMovies
+                        cards={cards}
+                    />
                 </Route>
                 <Route path="/profile">
                     <Profile />

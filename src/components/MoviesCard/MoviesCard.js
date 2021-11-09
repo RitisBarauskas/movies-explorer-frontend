@@ -1,8 +1,8 @@
 import "./MoviesCard.css";
-import imagePath from "../../images/33_word_about_design.png";
 import {useState} from "react";
+import {getDurationHM, MOVIES_URL} from "../../utils/Constants";
 
-function MoviesCard ({isSaved}) {
+function MoviesCard ({isSaved, data}) {
 
     const [isLike, setIsLike] = useState(false);
 
@@ -21,14 +21,19 @@ function MoviesCard ({isSaved}) {
         likeClassName = `movies-card__like movies-card__like_delete`;
     }
 
+    const getFullURL = (url) => {
+        return MOVIES_URL+url;
+    }
 
     return (
-        <div className="movies-card">
-            <h3 className="movies-card__title">33 слова о дизайне</h3>
-            <p className="movies-card__time">1ч 42мин</p>
-            <button className={likeClassName} onClick={handleLike}> </button>
-            <img src={imagePath} className="movies-card__image" alt="Картинка к фильму"/>
-        </div>
+        <li className="movies-card">
+            <div className="movies-card__container">
+                <h3 className="movies-card__title">{data.nameRU}</h3>
+                <p className="movies-card__time">{getDurationHM(data.duration)}</p>
+                <button className={likeClassName} onClick={handleLike}> </button>
+                <img src={getFullURL(data.image.url)} className="movies-card__image" alt={data.nameEN}/>
+            </div>
+        </li>
     )
 }
 

@@ -4,13 +4,16 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const SavedMovies = () => {
+const SavedMovies = ({cards}) => {
     return (
         <>
             <Header />
             <div className="saved-movies">
                 <SearchForm />
-                <MoviesCardList isSaved={true}/>
+                <MoviesCardList
+                    isSaved={true}
+                    cards={cards}
+                />
             </div>
             <Footer />
         </>
