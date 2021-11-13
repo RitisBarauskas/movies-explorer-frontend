@@ -2,10 +2,12 @@ import "./Profile.css";
 import Header from "../Header/Header";
 
 
-const Profile = () => {
+const Profile = ({loggedIn}) => {
     return (
         <>
-            <Header />
+            <Header
+                loggedIn={loggedIn}
+            />
             <section className="profile">
                 <h2 className="profile__title">
                     Привет, Ритис!

@@ -2,17 +2,16 @@ import "./Header.css";
 import {NavLink} from "react-router-dom";
 import logoPath from "../../images/logo.svg";
 import Navigation from "../Navigation/Navigation";
-import {useState} from "react";
 
 
-function Header({isIndex}) {
-    const [isLogin, setIsLogin] = useState(true);
+function Header({isIndex, loggedIn}) {
+    console.log(loggedIn)
 
     const headerClass = `header ${!isIndex ? 'header_no-index' : ''}`;
 
     let navigation;
 
-    if (!isLogin) {
+    if (!loggedIn) {
         navigation =
             <ul className="header__nav">
                 <li className="header__li">

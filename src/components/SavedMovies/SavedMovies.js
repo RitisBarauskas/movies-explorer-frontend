@@ -4,10 +4,12 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const SavedMovies = ({cards}) => {
+const SavedMovies = ({loggedIn, cards}) => {
     return (
         <>
-            <Header />
+            <Header
+                loggedIn={loggedIn}
+            />
             <div className="saved-movies">
                 <SearchForm />
                 <MoviesCardList
