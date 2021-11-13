@@ -71,7 +71,7 @@ function App() {
             .catch(err => console.log(err));
     }
 
-    const handleSignUp = data => {
+    const handleSignUp = (data) => {
         apiAuth.signUp(data)
             .then((res)=> {
                 history.push('/signin')
@@ -83,6 +83,18 @@ function App() {
         localStorage.removeItem('jwt');
         setLoggedIn(false);
         history.push('/signin');
+    }
+
+    const handleUpdateProfile = (data) => {
+        const jwt = localStorage.getItem('jwt');
+        if (jwt) {
+            apiAuth.updateProfile({jwt, data})
+                .then((res) => {
+                    setCurrentUser(res);
+                    history.push('/')
+                })
+                .catch(err => console.log(err))
+        }
     }
 
     return (
@@ -105,6 +117,7 @@ function App() {
                         <Profile
                             loggedIn={loggedIn}
                             handleLogout={handleLogout}
+                            handleUpdateProfile={handleUpdateProfile}
                         />
                     </Route>
                     <Route path="/signin">

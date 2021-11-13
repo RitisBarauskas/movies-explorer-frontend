@@ -41,6 +41,18 @@
     cursor: pointer;
 }
 
+.profile__error-text {
+    margin: 6px 0 0;
+    padding: 0;
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff4062;
+    max-width: 396px;
+}
+
 .profile__input {
     margin: 0;
     padding: 0;

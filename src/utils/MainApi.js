@@ -29,6 +29,18 @@ class Auth {
             .then(this._checkResponse);
     }
 
+    updateProfile({jwt, data}) {
+        return fetch(this._url+`users/me`, {
+            method: 'PATCH',
+            headers: {
+                "content-type": "application/json",
+                "Authorization" : `Bearer ${jwt}`
+            },
+            body: JSON.stringify(data)
+        })
+            .then(this._checkResponse);
+    }
+
     getUser(jwt) {
         return fetch(this._url+`users/me`, {
             method: 'GET',
