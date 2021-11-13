@@ -1,14 +1,17 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
+import {useState} from "react";
 
-function MoviesCardList ({isSaved, cards}) {
+function MoviesCardList ({isSaved, cards, handleAddCards, showCards}) {
+    const renderCards = cards.slice(0, showCards);
+    const addButtonClass = `movies-card-list__button ${(showCards >= cards.length) && 'movies-card-list__button_hidden'}`;
+
 
     return (
         <div className="movies-card-list">
             <div className="movies-card-list__container">
                 <ul className="movies-card-list__list">
-
-                    {cards.map((card, i) => (
+                    {renderCards.map((card, i) => (
                         <MoviesCard
                             isSaved={isSaved}
                             data={card}
@@ -16,7 +19,7 @@ function MoviesCardList ({isSaved, cards}) {
                         />
                     ))}
                 </ul>
-                <button className="movies-card-list__button">Ещё</button>
+                <button className={addButtonClass} onClick={handleAddCards}>Ещё</button>
             </div>
         </div>
     )

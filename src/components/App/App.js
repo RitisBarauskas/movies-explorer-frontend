@@ -22,7 +22,8 @@ function App() {
     const [cards, setCards] = useState([])
     const [currentUser, setCurrentUser] = useState({})
     const isIndex = true;
-
+    const [movies, setMovies] = useState([])
+    const [showCards, setShowCards] = useState(4)
     const history = useHistory();
 
     const tokenCheck = () => {
@@ -44,9 +45,11 @@ function App() {
     useEffect(() => {
         const token = tokenCheck();
         if (token) {
-            apiMovies.getDataCards().then((cards) => {
-                setCards(cards);
-            }).catch((err) => console.log(err));
+            apiMovies.getDataCards()
+                .then((movies) => {
+                    setMovies(movies);
+                })
+                .catch((err) => console.log(err));
         }
     }, [loggedIn]);
 
@@ -97,6 +100,23 @@ function App() {
         }
     }
 
+    const handleFilterCards = ({words, shortMovies}) => {
+        let duration = 9999
+        if (shortMovies) {
+            duration = 40
+        }
+        const cards = movies.filter((movie) => {
+            let name = (movie.nameRU+movie.nameEN).toLowerCase()
+            return (name.includes(words.search.toLowerCase()) && movie.duration <= duration)
+        })
+        setCards(cards);
+        setShowCards(4);
+    }
+
+    const handleAddCards = () => {
+        setShowCards(showCards+1);
+    }
+
     return (
         <CurrentUserContext.Provider value={currentUser}>
             <div className="app">
@@ -105,12 +125,18 @@ function App() {
                         <Movies
                             loggedIn={loggedIn}
                             cards={cards}
+                            handleFilterCards={handleFilterCards}
+                            handleAddCards={handleAddCards}
+                            showCards={showCards}
                         />
                     </Route>
                     <Route path="/saved-movies">
                         <SavedMovies
                             loggedIn={loggedIn}
                             cards={cards}
+                            handleFilterCards={handleFilterCards}
+                            handleAddCards={handleAddCards}
+                            showCards={showCards}
                         />
                     </Route>
                     <Route path="/profile">
