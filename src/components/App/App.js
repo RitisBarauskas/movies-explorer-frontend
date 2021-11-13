@@ -31,8 +31,7 @@ function App() {
             apiAuth.getUser(jwt)
                 .then((res) => {
                     if (res) {
-                        console.log(res)
-                        // setUserEmail(res.email);
+                        setCurrentUser(res);
                         setLoggedIn(true);
                         history.push('/');
                     }
@@ -65,15 +64,9 @@ function App() {
     const handleSignIn = (data) => {
         apiAuth.signIn(data)
             .then((res) => {
-                if (res.token) {
-                    localStorage.setItem('jwt', res.token);
-                    // setUserEmail(data.email);
-                    setLoggedIn(true);
-                    history.push('/');
-                } else {
-                    // setIsInfoTooltipAuth(false);
-                    // setIsInfoTooltipPopupOpen(true);
-                }
+                localStorage.setItem('jwt', res.token);
+                setLoggedIn(true);
+                history.push('/');
             })
             .catch(err => console.log(err));
     }
@@ -88,9 +81,8 @@ function App() {
 
     const handleLogout = () => {
         localStorage.removeItem('jwt');
-        // setUserEmail('');
-        // setLoggedIn(false);
-        // history.push('sign-in');
+        setLoggedIn(false);
+        history.push('/signin');
     }
 
     return (
@@ -112,6 +104,7 @@ function App() {
                     <Route path="/profile">
                         <Profile
                             loggedIn={loggedIn}
+                            handleLogout={handleLogout}
                         />
                     </Route>
                     <Route path="/signin">

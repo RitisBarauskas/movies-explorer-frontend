@@ -60,6 +60,11 @@
 
 }
 
+.navigation__account_index:hover {
+    box-shadow: 0 3px 14px rgba(255, 255, 255, 1);
+
+}
+
 .navigation__account-text {
     font-family: Inter, Arial, sans-serif;
     font-style: normal;

@@ -5,7 +5,6 @@ import Navigation from "../Navigation/Navigation";
 
 
 function Header({isIndex, loggedIn}) {
-    console.log(loggedIn)
 
     const headerClass = `header ${!isIndex ? 'header_no-index' : ''}`;
 
@@ -26,7 +25,7 @@ function Header({isIndex, loggedIn}) {
                 </li>
             </ul>
     } else {
-        navigation = <Navigation />
+        navigation = <Navigation isIndex={isIndex} />
     }
 
     return (

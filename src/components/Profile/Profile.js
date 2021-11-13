@@ -1,8 +1,11 @@
 import "./Profile.css";
 import Header from "../Header/Header";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+import {useContext} from "react";
 
 
-const Profile = ({loggedIn}) => {
+const Profile = ({loggedIn, handleLogout}) => {
+    const currentUser = useContext(CurrentUserContext);
     return (
         <>
             <Header
@@ -10,7 +13,7 @@ const Profile = ({loggedIn}) => {
             />
             <section className="profile">
                 <h2 className="profile__title">
-                    Привет, Ритис!
+                    Привет, {currentUser.name}!
                 </h2>
                 <form className="profile__form">
                     <label className="profile__label">
@@ -38,7 +41,7 @@ const Profile = ({loggedIn}) => {
                     <button className="profile__button">
                         Редактировать
                     </button>
-                    <button className="profile__button profile__button_exit">
+                    <button className="profile__button profile__button_exit" onClick={handleLogout}>
                         Выйти из аккаунта
                     </button>
                 </div>
