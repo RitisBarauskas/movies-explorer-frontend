@@ -1,8 +1,9 @@
 import "./MoviesCard.css";
 import {useState} from "react";
-import {getDurationHM, MOVIES_URL} from "../../utils/Constants";
+import {getDurationHM} from "../../utils/Constants";
+import {getFullURL} from "../../utils/Utils";
 
-function MoviesCard ({isSaved, data}) {
+function MoviesCard ({isSaved, data, handleAddMovie}) {
 
     const [isLike, setIsLike] = useState(false);
 
@@ -11,6 +12,7 @@ function MoviesCard ({isSaved, data}) {
             setIsLike(false);
         } else {
             setIsLike(true);
+            handleAddMovie(data);
         }
     }
     let likeClassName;
@@ -19,10 +21,6 @@ function MoviesCard ({isSaved, data}) {
         likeClassName = `movies-card__like ${isLike ? 'movies-card__like_active' : ''}`;
     } else {
         likeClassName = `movies-card__like movies-card__like_delete`;
-    }
-
-    const getFullURL = (url) => {
-        return MOVIES_URL+url;
     }
 
     return (

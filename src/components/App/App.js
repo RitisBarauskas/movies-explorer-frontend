@@ -16,6 +16,7 @@ import apiMovies from "../../utils/MoviesApi";
 import {useEffect, useState} from "react";
 import apiAuth from "../../utils/MainApi";
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
+import {getFullURL} from "../../utils/Utils";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -117,6 +118,31 @@ function App() {
         setShowCards(showCards+1);
     }
 
+    const handleAddMovie = (card) => {
+        const saveCard = {
+            country: card.country,
+            director: card.director,
+            duration: card.duration,
+            year: card.year,
+            description: card.description,
+            image: getFullURL(card.image.url),
+            trailer: card.trailerLink,
+            thumbnail: getFullURL(card.image.url),
+            movieId: card.id.toString(),
+            nameRU: card.nameRU,
+            nameEN: card.nameEN,
+        }
+        const jwt = localStorage.getItem('jwt');
+        if (jwt) {
+            apiAuth.addMovie({jwt, movie: saveCard})
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch(err => console.log(err));
+        }
+
+    }
+
     return (
         <CurrentUserContext.Provider value={currentUser}>
             <div className="app">
@@ -128,6 +154,7 @@ function App() {
                             handleFilterCards={handleFilterCards}
                             handleAddCards={handleAddCards}
                             showCards={showCards}
+                            handleAddMovie={handleAddMovie}
                         />
                     </Route>
                     <Route path="/saved-movies">

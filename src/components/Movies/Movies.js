@@ -4,7 +4,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const Movies = ({loggedIn, cards, handleFilterCards, showCards, handleAddCards}) => {
+const Movies = ({loggedIn, cards, handleFilterCards, showCards, handleAddCards, handleAddMovie}) => {
     return (
         <>
             <Header
@@ -18,6 +18,7 @@ const Movies = ({loggedIn, cards, handleFilterCards, showCards, handleAddCards})
                     cards={cards}
                     handleAddCards={handleAddCards}
                     showCards={showCards}
+                    handleAddMovie={handleAddMovie}
                 />
             </div>
             <Footer />

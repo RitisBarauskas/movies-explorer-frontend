@@ -51,6 +51,18 @@ class Auth {
         })
             .then(this._checkResponse);
     }
+
+    addMovie({jwt, movie}) {
+        return fetch(this._url+`movies`, {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json",
+                "Authorization" : `Bearer ${jwt}`
+            },
+            body: JSON.stringify(movie)
+        })
+            .then(this._checkResponse);
+    }
 }
 
 const apiAuth = new Auth ({
