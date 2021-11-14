@@ -4,7 +4,7 @@ import {useState} from "react";
 
 function MoviesCardList ({isSaved, cards, handleAddCards, showCards, handleAddMovie}) {
     const renderCards = cards.slice(0, showCards);
-    const addButtonClass = `movies-card-list__button ${(showCards >= cards.length) && 'movies-card-list__button_hidden'}`;
+    const addButtonClass = `movies-card-list__button ${(showCards >= cards.length || isSaved) && 'movies-card-list__button_hidden'}`;
 
 
     return (

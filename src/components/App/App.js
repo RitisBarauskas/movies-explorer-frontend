@@ -20,15 +20,17 @@ import {getFullURL} from "../../utils/Utils";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
-    const [cards, setCards] = useState([])
-    const [currentUser, setCurrentUser] = useState({})
+    const [cards, setCards] = useState([]);
+    const [saveMovies, setSaveMovies] = useState([]);
+    const [currentUser, setCurrentUser] = useState({});
     const isIndex = true;
-    const [movies, setMovies] = useState([])
-    const [showCards, setShowCards] = useState(4)
+    const [movies, setMovies] = useState([]);
+    const [showCards, setShowCards] = useState(4);
     const history = useHistory();
 
     const tokenCheck = () => {
         const jwt = localStorage.getItem('jwt');
+        console.log(jwt);
         if (jwt) {
             apiAuth.getUser(jwt)
                 .then((res) => {
@@ -44,15 +46,19 @@ function App() {
     }
 
     useEffect(() => {
-        const token = tokenCheck();
-        if (token) {
-            apiMovies.getDataCards()
-                .then((movies) => {
+        const jwt = tokenCheck();
+        if (jwt) {
+            Promise.all([
+                apiMovies.getDataCards(),
+                apiAuth.getMovies({jwt}),
+            ])
+                .then(([movies, saveMovies]) => {
                     setMovies(movies);
+                    setSaveMovies(saveMovies);
                 })
                 .catch((err) => console.log(err));
         }
-    }, [loggedIn]);
+    }, [loggedIn, saveMovies]);
 
     useEffect(() => {
         tokenCheck();
@@ -160,7 +166,7 @@ function App() {
                     <Route path="/saved-movies">
                         <SavedMovies
                             loggedIn={loggedIn}
-                            cards={cards}
+                            cards={saveMovies}
                             handleFilterCards={handleFilterCards}
                             handleAddCards={handleAddCards}
                             showCards={showCards}

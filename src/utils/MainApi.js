@@ -63,6 +63,17 @@ class Auth {
         })
             .then(this._checkResponse);
     }
+
+    getMovies({jwt}) {
+        return fetch(this._url+`movies`, {
+            method: 'GET',
+            headers: {
+                "content-type": "application/json",
+                "Authorization" : `Bearer ${jwt}`
+            }
+        })
+            .then(this._checkResponse);
+    }
 }
 
 const apiAuth = new Auth ({

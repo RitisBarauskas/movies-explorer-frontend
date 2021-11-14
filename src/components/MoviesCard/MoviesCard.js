@@ -16,11 +16,14 @@ function MoviesCard ({isSaved, data, handleAddMovie}) {
         }
     }
     let likeClassName;
+    let pathImage;
 
     if (!isSaved) {
         likeClassName = `movies-card__like ${isLike ? 'movies-card__like_active' : ''}`;
+        pathImage = getFullURL(data.image.url);
     } else {
         likeClassName = `movies-card__like movies-card__like_delete`;
+        pathImage = data.image;
     }
 
     return (
@@ -29,7 +32,7 @@ function MoviesCard ({isSaved, data, handleAddMovie}) {
                 <h3 className="movies-card__title">{data.nameRU}</h3>
                 <p className="movies-card__time">{getDurationHM(data.duration)}</p>
                 <button className={likeClassName} onClick={handleLike}> </button>
-                <img src={getFullURL(data.image.url)} className="movies-card__image" alt={data.nameEN}/>
+                <img src={pathImage} className="movies-card__image" alt={data.nameEN}/>
             </div>
         </li>
     )
